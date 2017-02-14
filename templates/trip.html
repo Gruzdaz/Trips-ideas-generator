@@ -1,0 +1,18 @@
+<head>
+{% load staticfiles %}
+<script src="{% static "js/jquery-3.1.1.js" %}"></script>
+<script src="{% static "js/like.js" %}"></script>
+</head>
+<body>
+{{trip.title}}
+{{trip.description| linebreaksbr}}
+{% for picture in pictures %}
+<img src="{{picture.image.url}}" height="142" width="142">
+{% endfor %}
+<br>
+<strong id="like_count">{{ trip.likes }}</strong> people like this category
+<button id="likes" data-catid="{{trip.id}}" class="btn btn-primary" type="button">
+        <span class="glyphicon glyphicon-thumbs-up"></span>
+        Like
+</button>
+</body>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}BomzTrip{% endblock %}</title>
+        {% block head_block %}
+        {% load staticfiles %}
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static "css/main.css" %}">
+	    {% endblock %}
+
+
+    </head>
+
+    <body>
+        <nav class="navbar navbar-toggleable-md navbar-light" style="background-color: #4A96AD;">
+              <a class="navbar-brand" href=".">
+                  <img src="http://www.iconscreator.com/gd/makefg.php?i=icons/Miscellaneous/Paper-Plane.png&r=255&g=255&b=255" width="40" height="40" class="d-inline-block align-top" alt="">
+            Bomztrip.com
+            <h5>Find your next adventure!</h5>
+              </a>
+            <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href=".">Home</a></li>
+              <li><a href="/trips">Trips</a></li>
+              <li><a href="#trips">Affiliates</a></li>
+              <li><a href="#contact">Contacts</a></li>
+            </ul>
+        </div>
+        </nav>
+    {% block body_block %}
+
+	{% endblock %}
+    </body>
+</html>

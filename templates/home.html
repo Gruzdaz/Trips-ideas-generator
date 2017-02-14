@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% block head_block %}
+{% load staticfiles %}
+<script src="{% static "js/jquery-3.1.1.js" %}"></script>
+<script src="{% static "js/rango-jquery.js" %}"></script>
+<script src="{% static "js/like.js" %}"></script>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="{% static "css/main.css" %}">
+<script src="{% static "js/csrf.js" %}"></script>
+{% endblock %}
+
+{% block body_block %}
+
+
+<div id = "search_form" class="center-block">
+    <h1> Need idea for your trip? </h1>
+    <div class="input-group">
+        <form action="" method="post" id = "search-form" >
+            {% csrf_token %}
+            <div class="col-xs-6">
+                {{ form.as_p }}
+                {{ form.media }}
+            </div>
+            <div class="col-xs-3">
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" id="search_submit" name = "search_submit" type="submit" value = "submit" ><span class="glyphicon glyphicon-search"></span></button>
+                </span>
+            </div>
+            <div class="[ form-group ]">
+            <input type="checkbox" name="checkbox_custom" id="fancy-checkbox-success-custom-icons" autocomplete="off" />
+            <div class="[ btn-group ]">
+                <label for="fancy-checkbox-success-custom-icons" class="[ btn btn-success ]">
+                    <span class="[ glyphicon glyphicon-plus ]"></span>
+                    <span class="[ glyphicon glyphicon-minus ]"></span>
+                </label>
+                <label for="fancy-checkbox-success-custom-icons" class="[ btn btn-default active ]">
+                    Nature
+                </label>
+            </div>
+        </div>
+        <div class="[ form-group ]">
+            <input type="checkbox" name="checkbox_custom" id="fancy-checkbox-info-custom-icons" autocomplete="off" />
+            <div class="[ btn-group ]">
+                <label for="fancy-checkbox-info-custom-icons" class="[ btn btn-info ]">
+                    <span class="[ glyphicon glyphicon-plus ]"></span>
+                    <span class="[ glyphicon glyphicon-minus ]"></span>
+                </label>
+                <label for="fancy-checkbox-info-custom-icons" class="[ btn btn-default active ]">
+                    History
+                </label>
+            </div>
+        </div>
+        <div class="[ form-group ]">
+            <input type="checkbox" name="checkbox_custom" id="fancy-checkbox-warning-custom-icons" autocomplete="off" />
+            <div class="[ btn-group ]">
+                <label for="fancy-checkbox-warning-custom-icons" class="[ btn btn-warning ]">
+                    <span class="[ glyphicon glyphicon-plus ]"></span>
+                    <span class="[ glyphicon glyphicon-minus ]"></span>
+                </label>
+                <label for="fancy-checkbox-warning-custom-icons" class="[ btn btn-default active ]">
+                    Architecture
+                </label>
+            </div>
+        </div>
+        <div class="[ form-group ]">
+            <input type="checkbox" name="checkbox_custom" id="fancy-checkbox-danger-custom-icons" autocomplete="off" />
+            <div class="[ btn-group ]">
+                <label for="fancy-checkbox-danger-custom-icons" class="[ btn btn-danger ]">
+                    <span class="[ glyphicon glyphicon-plus ]"></span>
+                    <span class="[ glyphicon glyphicon-minus ]"></span>
+                </label>
+                <label for="fancy-checkbox-danger-custom-icons" class="[ btn btn-default active ]">
+                    Entertainment
+                </label>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
+
+
+
+<div id = "loading">
+    <h3>Please wait.. </h3>
+    <img src="{% static "images/ajax-loader.gif" %}" alt="loading">
+</div>
+
+<div id = "post">
+</div>
+{% endblock %}

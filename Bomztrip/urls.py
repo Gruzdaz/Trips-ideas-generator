@@ -23,6 +23,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', home, name='home'),
     url(r'^trips$', trips),
+    url(r'^affiliates$', affiliates),
+    url(r'^contacts$', contacts),
     url(r'^random_trip/$', random_trip, name='random_trip'),
     url(r'^like/$', like , name='like'),
     url(

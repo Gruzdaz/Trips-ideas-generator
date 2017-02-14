@@ -12,7 +12,7 @@ def home(request):
     return render(request, 'home.html', {'form': SearchForm(initial={'keyword': 'Europe'})})
 
 def trips(request):
-    return render(request, 'trips.html', {'trips': Trip.objects.all()})
+    return render(request, 'trips.html', {'trips': Trip.objects.order_by('-likes')})
 
 def random_trip(request):
     keyword = request.POST.get('keyword')
@@ -50,3 +50,9 @@ def like(request):
             cat.likes =  likes
             cat.save()
     return HttpResponse(likes)
+
+def affiliates(request):
+    return render(request, 'working.html')
+
+def contacts(request):
+    return render(request, 'working.html')

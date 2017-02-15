@@ -12,12 +12,10 @@ def home(request):
     return render(request, 'home.html', {'form': SearchForm(initial={'keyword': 'Europe'})})
 
 def trips(request):
-    return render(request, 'trips.html', {'trips': Trip.objects.order_by('-likes')})
+    return render(request, 'trips.html', {'trips': Trip.objects.order_by('-likes'),})
 
 def random_trip(request):
     keyword = request.POST.get('keyword')
-    checks = request.POST.getlist("checkbox_custom")
-    print checks
     trips_city = Trip.objects.filter(city__icontains= keyword)
     trips_country = (Trip.objects.filter(country__icontains = keyword))
     trips_continent = (Trip.objects.filter(continent__icontains = keyword))
@@ -56,3 +54,8 @@ def affiliates(request):
 
 def contacts(request):
     return render(request, 'working.html')
+
+def single_trip(request, title):
+    trip = Trip.objects.get(slug=title)
+    image_list = trip.images.all()
+    return render(request, 'single_trip.html', {'trip': trip, 'pictures': image_list})

@@ -19,7 +19,7 @@
     <div class="input-group">
         <form action="" method="post" id = "search-form" >
             {% csrf_token %}
-            <div class="col-xs-6">
+            <div class="col-xs-9">
                 {{ form.as_p }}
                 {{ form.media }}
             </div>
@@ -28,54 +28,6 @@
                     <button class="btn btn-primary" id="search_submit" name = "search_submit" type="submit" value = "submit" ><span class="glyphicon glyphicon-search"></span></button>
                 </span>
             </div>
-            <div class="[ form-group ]">
-            <input type="checkbox" name="checkbox_custom" id="fancy-checkbox-success-custom-icons" autocomplete="off" />
-            <div class="[ btn-group ]">
-                <label for="fancy-checkbox-success-custom-icons" class="[ btn btn-success ]">
-                    <span class="[ glyphicon glyphicon-plus ]"></span>
-                    <span class="[ glyphicon glyphicon-minus ]"></span>
-                </label>
-                <label for="fancy-checkbox-success-custom-icons" class="[ btn btn-default active ]">
-                    Nature
-                </label>
-            </div>
-        </div>
-        <div class="[ form-group ]">
-            <input type="checkbox" name="checkbox_custom" id="fancy-checkbox-info-custom-icons" autocomplete="off" />
-            <div class="[ btn-group ]">
-                <label for="fancy-checkbox-info-custom-icons" class="[ btn btn-info ]">
-                    <span class="[ glyphicon glyphicon-plus ]"></span>
-                    <span class="[ glyphicon glyphicon-minus ]"></span>
-                </label>
-                <label for="fancy-checkbox-info-custom-icons" class="[ btn btn-default active ]">
-                    History
-                </label>
-            </div>
-        </div>
-        <div class="[ form-group ]">
-            <input type="checkbox" name="checkbox_custom" id="fancy-checkbox-warning-custom-icons" autocomplete="off" />
-            <div class="[ btn-group ]">
-                <label for="fancy-checkbox-warning-custom-icons" class="[ btn btn-warning ]">
-                    <span class="[ glyphicon glyphicon-plus ]"></span>
-                    <span class="[ glyphicon glyphicon-minus ]"></span>
-                </label>
-                <label for="fancy-checkbox-warning-custom-icons" class="[ btn btn-default active ]">
-                    Architecture
-                </label>
-            </div>
-        </div>
-        <div class="[ form-group ]">
-            <input type="checkbox" name="checkbox_custom" id="fancy-checkbox-danger-custom-icons" autocomplete="off" />
-            <div class="[ btn-group ]">
-                <label for="fancy-checkbox-danger-custom-icons" class="[ btn btn-danger ]">
-                    <span class="[ glyphicon glyphicon-plus ]"></span>
-                    <span class="[ glyphicon glyphicon-minus ]"></span>
-                </label>
-                <label for="fancy-checkbox-danger-custom-icons" class="[ btn btn-default active ]">
-                    Entertainment
-                </label>
-            </div>
-        </div>
         </form>
     </div>
 </div>

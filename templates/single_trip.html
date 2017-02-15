@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block head_block %}
+{% load staticfiles %}
+<script src="{% static "js/jquery-3.1.1.js" %}"></script>
+<script src="{% static "js/rango-jquery.js" %}"></script>
+<script src="{% static "js/like.js" %}"></script>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="{% static "css/main.css" %}">
+<script src="{% static "js/csrf.js" %}"></script>
+{% endblock %}
+
+{% block body_block %}
+<div id = "content">
+{{trip.title}}
+{{trip.description| linebreaksbr}}
+{% for picture in pictures %}
+<img src="{{picture.image.url}}" height="142" width="142">
+{% endfor %}
+<br>
+<strong id="like_count">{{ trip.likes }}</strong> people like this category
+<button id="likes" data-catid="{{trip.id}}" class="btn btn-primary" type="button">
+        <span class="glyphicon glyphicon-thumbs-up"></span>
+        Like
+</button>
+</div>
+{% endblock %}

@@ -27,6 +27,9 @@ urlpatterns = [
     url(r'^contacts$', contacts),
     url(r'^random_trip/$', random_trip, name='random_trip'),
     url(r'^like/$', like , name='like'),
+    url(r'^(?P<title>[\w.@+-]+)/$',
+                       single_trip,
+                       name='single_trip'),
     url(
         r'search-autocomplete/$',
         SearchAutocomplete.as_view(),
